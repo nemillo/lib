@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : sql112.byetcluster.com
--- Généré le :  Dim 28 jan. 2024 à 14:10
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP :  7.2.22
+-- Host: sql112.infinityfree.com
+-- Generation Time: Oct 06, 2024 at 03:06 PM
+-- Server version: 10.6.19-MariaDB
+-- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `epiz_28718908_lib`
+-- Database: `epiz_28718908_lib`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `authors`
+-- Table structure for table `authors`
 --
 
 CREATE TABLE `authors` (
@@ -33,10 +33,10 @@ CREATE TABLE `authors` (
   `Surname` text NOT NULL,
   `Name` text NOT NULL,
   `Comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `authors`
+-- Dumping data for table `authors`
 --
 
 INSERT INTO `authors` (`authorID`, `Surname`, `Name`, `Comments`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `authors` (`authorID`, `Surname`, `Name`, `Comments`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `base`
+-- Table structure for table `base`
 --
 
 CREATE TABLE `base` (
@@ -62,10 +62,10 @@ CREATE TABLE `base` (
   `EndDate` date NOT NULL,
   `Abstract` text NOT NULL,
   `Stars` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `base`
+-- Dumping data for table `base`
 --
 
 INSERT INTO `base` (`ID`, `Title`, `Author`, `Language`, `Support`, `StartDate`, `EndDate`, `Abstract`, `Stars`) VALUES
@@ -77,17 +77,17 @@ INSERT INTO `base` (`ID`, `Title`, `Author`, `Language`, `Support`, `StartDate`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `languages`
+-- Table structure for table `languages`
 --
 
 CREATE TABLE `languages` (
   `languageID` int(11) NOT NULL,
   `language` text NOT NULL,
   `comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `languages`
+-- Dumping data for table `languages`
 --
 
 INSERT INTO `languages` (`languageID`, `language`, `comments`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `languages` (`languageID`, `language`, `comments`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `notes`
+-- Table structure for table `notes`
 --
 
 CREATE TABLE `notes` (
@@ -106,10 +106,10 @@ CREATE TABLE `notes` (
   `note` text NOT NULL,
   `noteDate` date NOT NULL,
   `elementID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `notes`
+-- Dumping data for table `notes`
 --
 
 INSERT INTO `notes` (`noteID`, `note`, `noteDate`, `elementID`) VALUES
@@ -121,17 +121,17 @@ INSERT INTO `notes` (`noteID`, `note`, `noteDate`, `elementID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `stars`
+-- Table structure for table `stars`
 --
 
 CREATE TABLE `stars` (
   `starsID` int(11) NOT NULL,
   `stars` int(11) NOT NULL,
   `comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `stars`
+-- Dumping data for table `stars`
 --
 
 INSERT INTO `stars` (`starsID`, `stars`, `comments`) VALUES
@@ -144,17 +144,17 @@ INSERT INTO `stars` (`starsID`, `stars`, `comments`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `supports`
+-- Table structure for table `supports`
 --
 
 CREATE TABLE `supports` (
   `supportID` int(11) NOT NULL,
   `support` text NOT NULL,
   `comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `supports`
+-- Dumping data for table `supports`
 --
 
 INSERT INTO `supports` (`supportID`, `support`, `comments`) VALUES
@@ -166,17 +166,17 @@ INSERT INTO `supports` (`supportID`, `support`, `comments`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tags`
+-- Table structure for table `tags`
 --
 
 CREATE TABLE `tags` (
   `tagID` int(11) NOT NULL,
   `tag` text NOT NULL,
   `comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `tags`
+-- Dumping data for table `tags`
 --
 
 INSERT INTO `tags` (`tagID`, `tag`, `comments`) VALUES
@@ -189,7 +189,7 @@ INSERT INTO `tags` (`tagID`, `tag`, `comments`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tags_elements`
+-- Table structure for table `tags_elements`
 --
 
 CREATE TABLE `tags_elements` (
@@ -197,10 +197,10 @@ CREATE TABLE `tags_elements` (
   `elementID` int(11) NOT NULL,
   `tagID` int(11) NOT NULL,
   `comments` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
--- Déchargement des données de la table `tags_elements`
+-- Dumping data for table `tags_elements`
 --
 
 INSERT INTO `tags_elements` (`tags_elementsID`, `elementID`, `tagID`, `comments`) VALUES
@@ -214,17 +214,17 @@ INSERT INTO `tags_elements` (`tags_elementsID`, `elementID`, `tagID`, `comments`
 (8, 4, 3, '');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `authors`
+-- Indexes for table `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`authorID`);
 
 --
--- Index pour la table `base`
+-- Indexes for table `base`
 --
 ALTER TABLE `base`
   ADD PRIMARY KEY (`ID`),
@@ -234,38 +234,38 @@ ALTER TABLE `base`
   ADD KEY `FK_language` (`Language`) USING BTREE;
 
 --
--- Index pour la table `languages`
+-- Indexes for table `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`languageID`);
 
 --
--- Index pour la table `notes`
+-- Indexes for table `notes`
 --
 ALTER TABLE `notes`
   ADD PRIMARY KEY (`noteID`),
   ADD KEY `FK_id` (`elementID`);
 
 --
--- Index pour la table `stars`
+-- Indexes for table `stars`
 --
 ALTER TABLE `stars`
   ADD PRIMARY KEY (`starsID`);
 
 --
--- Index pour la table `supports`
+-- Indexes for table `supports`
 --
 ALTER TABLE `supports`
   ADD PRIMARY KEY (`supportID`);
 
 --
--- Index pour la table `tags`
+-- Indexes for table `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`tagID`);
 
 --
--- Index pour la table `tags_elements`
+-- Indexes for table `tags_elements`
 --
 ALTER TABLE `tags_elements`
   ADD PRIMARY KEY (`tags_elementsID`),
@@ -273,63 +273,63 @@ ALTER TABLE `tags_elements`
   ADD KEY `FK_elementID` (`elementID`) USING BTREE;
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `authors`
+-- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
   MODIFY `authorID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `base`
+-- AUTO_INCREMENT for table `base`
 --
 ALTER TABLE `base`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `languages`
+-- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
   MODIFY `languageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `notes`
+-- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
   MODIFY `noteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `stars`
+-- AUTO_INCREMENT for table `stars`
 --
 ALTER TABLE `stars`
   MODIFY `starsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `supports`
+-- AUTO_INCREMENT for table `supports`
 --
 ALTER TABLE `supports`
   MODIFY `supportID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `tags`
+-- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
   MODIFY `tagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `tags_elements`
+-- AUTO_INCREMENT for table `tags_elements`
 --
 ALTER TABLE `tags_elements`
   MODIFY `tags_elementsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `base`
+-- Constraints for table `base`
 --
 ALTER TABLE `base`
   ADD CONSTRAINT `base_ibfk_1` FOREIGN KEY (`Author`) REFERENCES `authors` (`authorID`) ON DELETE CASCADE,
@@ -338,13 +338,13 @@ ALTER TABLE `base`
   ADD CONSTRAINT `base_ibfk_4` FOREIGN KEY (`Support`) REFERENCES `supports` (`supportID`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `notes`
+-- Constraints for table `notes`
 --
 ALTER TABLE `notes`
   ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`elementID`) REFERENCES `base` (`ID`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `tags_elements`
+-- Constraints for table `tags_elements`
 --
 ALTER TABLE `tags_elements`
   ADD CONSTRAINT `tags_elements_ibfk_1` FOREIGN KEY (`elementID`) REFERENCES `base` (`ID`) ON DELETE CASCADE,
